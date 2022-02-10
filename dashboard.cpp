@@ -1,4 +1,8 @@
 #include "dashboard.h"
+#include "mainwindow.h"
+#include <QGridLayout>
+#include <QPushButton>
+
 
 class DashboardData : public QSharedData
 {
