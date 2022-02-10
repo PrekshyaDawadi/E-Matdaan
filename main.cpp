@@ -6,8 +6,8 @@
 
 // Header files that I added
 #include <qpushbutton.h>
-#include <QVBoxLayout>
-#include <QWindow>
+#include <QGridLayout>
+
 
 int main(int argc, char *argv[])
 {
@@ -23,21 +23,8 @@ int main(int argc, char *argv[])
         }
     }
 
-    //MainWindow w;
-    //w.show();
-
-    QVBoxLayout box;
-    //Resize the container
-
-
-    QPushButton button("Close", &box);
-    button.resize(100,100);
-    button.setFont(QFont("Times", 18, QFont::Bold));
-
-    QObject::connect(&button, SIGNAL(clicked()), &a, SLOT(quit()));
-
-
-    box.show();
+    MainWindow w;
+    w.show();
 
     return a.exec();
 }
