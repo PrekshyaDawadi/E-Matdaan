@@ -4,14 +4,13 @@
 #include <QLocale>
 #include <QTranslator>
 
-// Header files that I added
-#include <qpushbutton.h>
-#include <QGridLayout>
-
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    MainWindow w;
+    w.show();
 
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
@@ -22,9 +21,5 @@ int main(int argc, char *argv[])
             break;
         }
     }
-
-    MainWindow w;
-    w.show();
-
     return a.exec();
 }
