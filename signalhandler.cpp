@@ -1,36 +1,17 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include <QPushButton>
+#include "signalhandler.h"
 #include <QGridLayout>
-#include <QString>
+#include <QPushButton>
+#include <QObject>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+signalHandler::signalHandler()
 {
-    ui->setupUi(this);
-
-    pushButton = new QPushButton(this);
-    pushButton->setText("Click me!");
-    QGridLayout *layout1 = new QGridLayout;
-    layout1->addWidget(pushButton, 0, 0);
-    setLayout(layout1);
-
-    connect(pushButton, SIGNAL(clicked()), this, SLOT(dashboard()));
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-
-
-void MainWindow::dashboard()
-{
+void signalHandler::dashboard(){
 
     // New Window Widget
     QWidget *window = new QWidget;
-    setWindowTitle("Dashboard");
+    window->setWindowTitle("Dashboard");
     // creating Layout for dashboard
     QGridLayout *layout2 = new QGridLayout;
 
@@ -52,6 +33,8 @@ void MainWindow::dashboard()
 
     window->show();
 }
+
+
 
 
 
