@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPushButton>
+
+class QPushButton;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,7 +25,9 @@ private slots:
 
     void on_actionColor_triggered();
 
+    void dashboard();
 private:
     Ui::MainWindow *ui;
+    QPushButton* pushButton;
 };
 #endif // MAINWINDOW_H

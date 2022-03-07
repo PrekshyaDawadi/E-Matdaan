@@ -27,11 +27,14 @@ void MainWindow::on_pushButton_Login_clicked()
     if(VoterID== "prasiddhi" && password=="test"){
         //QMessageBox::information(this,"Login","Voter ID and password is correct");
         //connect(pushButton, SIGNAL(clicked()), this, SLOT(dashboard()));
+        dashboard();
     }
     else if(VoterID== "prasi" && password=="test"){
         //QMessageBox::information(this,"Login","Voter ID and password is correct");}
+        dashboard();
+    }
     else{
-       //QMessageBox::warning(this,"login","Voter ID and password is incorrect");
+       QMessageBox::warning(this,"login","Voter ID and password is incorrect");
     }
 }
 
@@ -43,6 +46,35 @@ void MainWindow::on_pushButton_clicked()
     signup.exec();
 
 }
+
+void MainWindow::dashboard()
+{
+
+    // New Window Widget
+    QWidget *window = new QWidget;
+    setWindowTitle("Dashboard");
+    // creating Layout for dashboard
+    QGridLayout *layout2 = new QGridLayout;
+
+    // Creating push buttons
+    QPushButton *BallotButton = new QPushButton("Ballot");
+    QPushButton *PartyButton = new QPushButton("Parties Information");
+    QPushButton *CandidatesButton = new QPushButton("Candidates Information");
+    QPushButton *ResultButton = new QPushButton("Results");
+    QPushButton *HelpButton = new QPushButton("Help");
+
+    // Adding push buttons to layout
+    layout2->addWidget(BallotButton, 0, 0);
+    layout2->addWidget(PartyButton, 0, 1);
+    layout2->addWidget(CandidatesButton, 0, 2);
+    layout2->addWidget(ResultButton, 1, 1);
+    layout2->addWidget(HelpButton, 1, 2);
+
+    window->setLayout(layout2);
+
+    window->show();
+}
+
 
 
 void MainWindow::on_actionColor_triggered()
