@@ -5,8 +5,13 @@
 #include<QFont>
 #include<QColorDialog>
 #include<QColor>
+#include <QPushButton>
+#include <QSqlDatabase>
+#include <QSql>
+#include <QMainWindow>
 
 MainWindow::MainWindow(QWidget *parent)
+
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
@@ -21,18 +26,24 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_Login_clicked()
 {
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/StudentInformation");
+
+    if(db.open()){
+        QMessageBox::information(this,"Connection", "Connection established successfully!");
+    }else{
+        QMessageBox::information(this,"Not Connected", "Connection establish failed");
+    }
+
 
 
     QString VoterID =ui->lineEdit_Name->text();
     QString password =ui->lineEdit_2_Password->text();
 
     if(VoterID== "prasiddhi" && password=="test"){
-        //QMessageBox::information(this,"Login","Voter ID and password is correct");
-        //connect(pushButton, SIGNAL(clicked()), this, SLOT(dashboard()));
         dashboard();
     }
     else if(VoterID== "prasi" && password=="test"){
-        //QMessageBox::information(this,"Login","Voter ID and password is correct");}
         dashboard();
     }
     else{
