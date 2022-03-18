@@ -3,6 +3,17 @@
 
 #include <QMainWindow>
 #include <QPushButton>
+#include<QFont>
+#include<QColorDialog>
+#include<QColor>
+#include <QPushButton>
+#include <QSqlDatabase>
+#include <QSql>
+#include <QMainWindow>
+#include<QMessageBox>
+#include <QSqlQuery>
+
+
 
 class QPushButton;
 
@@ -29,5 +40,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QPushButton* pushButton;
+    QSqlDatabase db;
 };
 #endif // MAINWINDOW_H

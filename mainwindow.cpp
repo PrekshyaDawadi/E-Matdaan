@@ -26,17 +26,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_Login_clicked()
 {
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/StudentInformation");
-
-    if(db.open()){
-        QMessageBox::information(this,"Connection", "Connection established successfully!");
-    }else{
-        QMessageBox::information(this,"Not Connected", "Connection establish failed");
-    }
-
-
-
     QString VoterID =ui->lineEdit_Name->text();
     QString password =ui->lineEdit_2_Password->text();
 
@@ -57,7 +46,6 @@ void MainWindow::on_pushButton_clicked()
     Signup signup;
     signup.setModal(true);
     signup.exec();
-
 }
 
 void MainWindow::dashboard()
