@@ -42,21 +42,21 @@
    </property>
    <layout class="QFormLayout" name="formLayout">
     <item row="0" column="0">
-     <widget class="QRadioButton" name="radioButton">
+     <widget class="QRadioButton" name="candidate1">
       <property name="text">
        <string>Candidate1</string>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QRadioButton" name="radioButton_2">
+     <widget class="QRadioButton" name="candidate2">
       <property name="text">
        <string>Candidate2</string>
       </property>
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QRadioButton" name="radioButton_3">
+     <widget class="QRadioButton" name="candidate3">
       <property name="text">
        <string>Candidate3</string>
       </property>

@@ -2,6 +2,10 @@
 #define BALLOT_H
 
 #include <QDialog>
+#include <QtSql>
+#include <QSqlDatabase>
+#include <QMessageBox>
+#include "dashboard.h"
 
 namespace Ui {
 class ballot;
@@ -16,14 +20,11 @@ public:
     ~ballot();
 
 private slots:
-    void on_radioButton_clicked();
-
-    void on_radioButton_2_clicked();
-
-    void on_radioButton_3_clicked();
+    void on_pushButton_clicked();
 
 private:
     Ui::ballot *ui;
+    QSqlDatabase db;
 };
 
 #endif // BALLOT_H

@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -16,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/prekshya/Documents/projects/eMatdaan/studentInformation.sqlite");
+    db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/studentInformation.sqlite");
 
     if(!db.open()){
         QMessageBox::information(this, "Connectivity", "Database not connected.");
@@ -71,7 +72,7 @@ void MainWindow::on_pushButton_3_clicked()
         password = ui->LoginPassword->text();
 
         if(!db.isOpen()){
-            QString message = "Failed to open database.";
+            QString message = "Failed to open database - mainwindow.cpp.";
             QMessageBox::information(this, "Failed", message);
         }
 
