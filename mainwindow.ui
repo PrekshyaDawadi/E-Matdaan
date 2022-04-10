@@ -20,13 +20,10 @@
       <x>210</x>
       <y>40</y>
       <width>571</width>
-      <height>461</height>
+      <height>551</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="2" column="0">
-      <widget class="QLineEdit" name="LastName"/>
-     </item>
      <item row="5" column="0">
       <widget class="QLineEdit" name="Password">
        <property name="echoMode">
@@ -34,87 +31,50 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
-      <widget class="QLineEdit" name="UserName"/>
+     <item row="2" column="0">
+      <widget class="QLineEdit" name="LastName"/>
      </item>
      <item row="1" column="0">
       <widget class="QLineEdit" name="FirstName"/>
      </item>
+     <item row="4" column="0">
+      <widget class="QLineEdit" name="UserName"/>
+     </item>
+     <item row="6" column="0">
+      <widget class="QComboBox" name="Department">
+       <property name="currentText">
+        <string/>
+       </property>
+       <item>
+        <property name="text">
+         <string>Computer Science</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Computer Engineering</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+      </widget>
+     </item>
      <item row="3" column="0">
       <widget class="QLineEdit" name="RollNumber"/>
      </item>
+     <item row="7" column="0">
+      <widget class="QLineEdit" name="Batch"/>
+     </item>
     </layout>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>90</y>
-      <width>81</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>First Name</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>170</y>
-      <width>71</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Last Name</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>260</y>
-      <width>91</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Roll Number</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>86</x>
-      <y>340</y>
-      <width>81</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>UserName</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>420</y>
-      <width>67</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Password</string>
-    </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>530</y>
+      <x>200</x>
+      <y>600</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -126,8 +86,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>530</y>
+      <x>350</x>
+      <y>600</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -282,6 +242,97 @@
     </property>
     <property name="text">
      <string>Create a new account</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>96</x>
+      <y>90</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>First Name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>160</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Last Name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>230</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Roll Number</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>300</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Username</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>380</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Password</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>450</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Department </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>530</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Batch</string>
     </property>
    </widget>
   </widget>

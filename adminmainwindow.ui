@@ -97,7 +97,7 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="0">
+    <item row="7" column="0">
      <widget class="QPushButton" name="pushButton_4">
       <property name="font">
        <font>
@@ -109,7 +109,7 @@
       </property>
      </widget>
     </item>
-    <item row="7" column="0">
+    <item row="9" column="0">
      <widget class="QPushButton" name="pushButton_5">
       <property name="font">
        <font>
@@ -118,6 +118,16 @@
       </property>
       <property name="text">
        <string>Log out</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0" colspan="2">
+     <widget class="QTableView" name="tableView">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
      </widget>
     </item>
