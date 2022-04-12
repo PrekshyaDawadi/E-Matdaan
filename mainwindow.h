@@ -9,10 +9,16 @@
 #include "dashboard.h"
 #include "ballot.h"
 #include "admin.h"
+#include <QSqlDatabase>
+#include <QString>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
+extern QString TableName;
+extern QString selectedCandidates;
+extern QString depart;
 
 class MainWindow : public QMainWindow
 {
@@ -32,6 +38,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    QSqlDatabase db;
+    QSqlDatabase  db;
 };
 #endif // MAINWINDOW_H

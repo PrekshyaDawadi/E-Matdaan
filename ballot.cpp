@@ -18,6 +18,26 @@ ballot::ballot(QWidget *parent) :
         QMessageBox::information(this, "Connectivity", "Database not connected.");
     }
 
+    else{
+        QSqlQuery qry(db);
+        qry.exec("select Name from candidatesInformation where Department = '"+depart+"';");
+        int i= 0;
+        while(qry.next()){
+            QSqlRecord rec = qry.record();
+            int nameCol = rec.indexOf("Name"); // index of the field "name"
+            qry.next();
+            QString name = qry.value(nameCol).toString();
+            if(i == 0){
+             ui->candidate1->setText(name);
+            }else if(i==1){
+            ui->candidate2->setText(name);
+            }else{
+            ui->candidate3->setText(name);
+            }
+            i++;
+        }
+    }
+
 }
 
 ballot::~ballot()
@@ -29,7 +49,10 @@ ballot::~ballot()
 void ballot::on_pushButton_clicked()
 {
 
-    if (db.isOpen()){
+    if(!db.open())
+      qWarning() << "ERROR: " << db.lastError();
+
+    else{
 
         QSqlQuery qry; 
         if(ui->candidate1->isChecked()){
@@ -61,18 +84,20 @@ void ballot::on_pushButton_clicked()
             qry.exec();
 
             //QMessageBox::information(this, "Success!", "If condition 3 entered.");
-        }else{
-            return;
         }
 
         QMessageBox::information(this, "Success!", "Voting successful!");
 
 
-    }else{
-        QMessageBox::information(this, "Error!", "Database not connected!");
     }
+
+    //db.close();
+    //QSqlDatabase::removeDatabase("StudentInformation");
+
     this->hide();
     dashboard d;
     d.setModal(true);
     d.exec();
+
+
 }

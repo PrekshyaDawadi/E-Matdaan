@@ -1,11 +1,21 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QSqlDatabase>
+
+
+QString TableName;
+QString selectedCandidates;
+QString depart;
+
+
 
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    //db(db)
 {
+
     ui->setupUi(this);
     ui->FirstName->setPlaceholderText("Enter your First name");
     ui->LastName->setPlaceholderText("Enter your Last name");
@@ -15,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->LoginUsername->setPlaceholderText("Enter your username");
     ui->LoginPassword->setPlaceholderText("Enter your password");
 
+    QSqlDatabase db;
 
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/studentInformation.sqlite");
@@ -32,7 +43,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    QString TableName;
+
     if(db.isOpen()){
 
         // Take inputs from each field
@@ -43,38 +54,19 @@ void MainWindow::on_pushButton_clicked()
         QString Password =ui->Password->text();
         QString Batch =ui->Batch->text();
 
-        //rollnumber = rollnumber.toInt();
-        //batch = batch.toInt();
-
         if(ui->Department->currentText() == "Computer Science"){
             TableName = "ComputerScience";
+            selectedCandidates = "selectedComputerScience";
             QMessageBox::information(this, "Programmer Info","Table name set to computer science");
         }else{
             TableName = "ComputerEngineering";
+            selectedCandidates = "selectedComputerEngineering";
             QMessageBox::information(this, "Programmer Info","Table name set to computer engineering");
         }
 
         // Check and Insert into the database
-
-        QSqlQuery qry;
-        // int rows = 0;
-
-        // Run some query
-//        qry.exec("SELECT * FROM TableName");
-
-//        while(qry.next())
-//            rows++;
-
-//        int count = 0;
-
-//        while(count <= rows){
-
-//            QSqlQuery roll.exec("SELECT RollNumber FROM TableName;");
-//            QSqlQuery first.exec("SELECT FirstName FROM TableName;");
-//            QSqlQuery last.exec("SELECT LastName FROM TableName;");
-//            QSqlQuery batch.exec("SELECT Batch FROM TableName;");
-
-            //if("FirstName == first.value(count);" and "LastName == last.value(count)==LastName;" and "RollNumber == roll.value(count);" and "Batch == batch.value(count);"){
+        {
+            QSqlQuery qry;
 
             if(qry.exec("select * from '"+TableName+"' where FirstName == '"+FirstName+"' and LastName == '"+LastName+"' and RollNumber == '"+RollNumber+"' and Batch == '"+Batch+"'")){
                 QMessageBox::information(this, "programmer info", "Entered '"+TableName+"' loop.");
@@ -86,29 +78,27 @@ void MainWindow::on_pushButton_clicked()
                 }
 
                 if(!qry.next())
-                   {
-                         qDebug() << qry.lastError();
-                   }
-                   else
-                   {
-                        qDebug() << "Success!";
-                        QMessageBox::information(this, "programmer info", "qry.next() returned true.");
+                {
+                    qDebug() << qry.lastError();
+                }
+                else
+                {
+                    qDebug() << "Success!";
+                    QMessageBox::information(this, "programmer info", "qry.next() returned true.");
 
-                   }
+                }
 
                 if(count==1){
-                    //QSqlQuery query;
-                    //RollNumber = RollNumber.toInt();
-                    //Batch = Batch.toInt();
-                    qry.prepare("INSERT INTO BasicInformation (RollNumber, FirstName, LastName, UserName, Password, Batch)\
-                        VALUES (:RollNumber, :FirstName, :LastName, :UserName, :Password, :Batch);");
+                    qry.prepare("INSERT INTO BasicInformation (RollNumber, FirstName, LastName, UserName, Password, Batch, Department)\
+                                VALUES (:RollNumber, :FirstName, :LastName, :UserName, :Password, :Batch, :TableName);");
 
-                    qry.bindValue(":RollNumber", RollNumber);
+                            qry.bindValue(":RollNumber", RollNumber);
                     qry.bindValue(":FirstName", FirstName);
                     qry.bindValue(":LastName", LastName);
                     qry.bindValue(":UserName", UserName);
                     qry.bindValue(":Password", Password);
                     qry.bindValue(":Batch", Batch);
+                    qry.bindValue(":Department", TableName);
 
                     qry.exec();
                     QMessageBox::information(this, "Successful!", "Your account was successfully created!");
@@ -122,45 +112,43 @@ void MainWindow::on_pushButton_clicked()
                     exit(0);
                 }
 
-        }
-        else{
-           QMessageBox::information(this, "Failed!", "Your data doesnot match our records!");
-        }
+            }
+            else{
+                QMessageBox::information(this, "Failed!", "Your data doesnot match our records!");
+            }
 
+        }
     }else{
         QMessageBox::information(this,"Not Connected", "Connection establish failed");
     }
-    //db.close();
-    //QSqlDatabase::removeDatabase("StudentInformation");
 }
+
+
 
 
 void MainWindow::on_pushButton_3_clicked()
 {
-        QString username, password;
-        username = ui->LoginUsername->text();
-        password = ui->LoginPassword->text();
+    QString username, password;
+    username = ui->LoginUsername->text();
+    password = ui->LoginPassword->text();
+    QSqlQuery qry;
 
-        if(!db.isOpen()){
-            QString message = "Failed to open database - mainwindow.cpp.";
-            QMessageBox::information(this, "Failed", message);
-        }
-
-        QSqlQuery qry;
-
-//        qry.prepare(
-//           "select * from BasicInformation where UserName= :username and Password= :password"
-//        );
-//        qry.bindValue(":UserName",  username);
-//        qry.bindValue(":Password", password);
-
-        if(qry.exec("select * from BasicInformation where UserName == '"+username+"' and Password == '"+password+"'")){
+    if(qry.exec("select * from BasicInformation where UserName == '"+username+"' and Password == '"+password+"'")){
         int count = 0;
         while (qry.next()){
             count++;
         }
         if(count==1){
-            //QMessageBox::information(this, "Info", "Username and password is correct.");
+
+            qry.exec("select Department from BasicInformation where UserName == '"+username+"' and Password == '"+password+"'");
+            //depart = qry.boundValue(1).toString();
+            QSqlRecord rec = qry.record();
+            int nameCol = rec.indexOf("Department"); // index of the field "name"
+            qry.next();
+            depart = qry.value(nameCol).toString();
+
+            // qDebug() << depart;
+
             this->hide();
             dashboard dash;
             dash.setModal(true);
@@ -174,7 +162,9 @@ void MainWindow::on_pushButton_3_clicked()
             QMessageBox::information(this, "Info", "Username and password is not correct.");
             exit(0);
         }
-        }
+
+    }
+
 }
 
 void MainWindow::on_pushButton_4_clicked()

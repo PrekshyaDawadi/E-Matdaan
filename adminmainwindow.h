@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <QSqlTableModel>
+#include "candidatesinformationinput.h"
 
 namespace Ui {
 class adminMainWindow;
@@ -20,6 +21,8 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::adminMainWindow *ui;

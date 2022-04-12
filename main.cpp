@@ -12,17 +12,21 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+{
+    QSqlDatabase  db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/studentInformation.sqlite");
 
     if(!db.open()){
         QMessageBox msg;
         QMessageBox::information(&msg, "Connectivity", "Database not connected.");
     }
+    }
 
     MainWindow w;
     w.show();
+
+    //db.close();
+    //QSqlDatabase::removeDatabase("StudentInformation");
 
 
     return a.exec();

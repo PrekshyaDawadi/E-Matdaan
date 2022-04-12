@@ -1,9 +1,11 @@
 #include "admin.h"
 #include "ui_admin.h"
+#include "candidateinformation.h"
 
 admin::admin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::admin)
+    //db(db)
 {
     ui->setupUi(this);
 }

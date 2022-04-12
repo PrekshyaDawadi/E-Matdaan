@@ -19,6 +19,7 @@ SOURCES += \
     admin.cpp \
     adminmainwindow.cpp \
     ballot.cpp \
+    candidatesinformationinput.cpp \
     dashboard.cpp \
     main.cpp \
     mainwindow.cpp
@@ -27,6 +28,7 @@ HEADERS += \
     admin.h \
     adminmainwindow.h \
     ballot.h \
+    candidatesinformationinput.h \
     dashboard.h \
     mainwindow.h
 
@@ -34,6 +36,7 @@ FORMS += \
     admin.ui \
     adminmainwindow.ui \
     ballot.ui \
+    candidatesinformationinput.ui \
     dashboard.ui \
     mainwindow.ui
 

@@ -15,25 +15,16 @@ adminMainWindow::~adminMainWindow()
 
 void adminMainWindow::on_pushButton_clicked()
 {
-
+    //Signup Request review.
+    // Delete this button
         this->hide();
-//        reviewrequest r;
-//        r.show();
-//      QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-//      db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/studentInformation.sqlite");
 
-//      if (!db.open())
-//      {
-//        QMessageBox::information(this, "Connectivity", "DB is connected.");
-//      }
+}
 
-//      QSqlTableModel *model = new QSqlTableModel(this,db);
-//      model->setTable("SigninRequest");
-//      model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-//      model->select();
-//      model->setHeaderData(0, Qt::Horizontal, tr("First-name"));
-//      model->setHeaderData(1, Qt::Horizontal, tr("Last-name"));
-
-//      ui->tableView->setModel(model);
-//      ui->tableView->show();
+void adminMainWindow::on_pushButton_3_clicked()
+{
+    this->hide();
+    CandidatesInformationInput amw;
+    amw.setModal(true);
+    amw.exec();
 }

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CandidatesInformationInput</class>
+ <widget class="QDialog" name="CandidatesInformationInput">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1187</width>
+    <height>673</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="8" column="1">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>RollNumber</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Batch</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QLineEdit" name="candidate1Department"/>
+   </item>
+   <item row="4" column="3">
+    <widget class="QLineEdit" name="candidate1RollNumber">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="1">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>RollNumber</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="3">
+    <widget class="QLineEdit" name="candidate3RollNumber"/>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Candidate3</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="3">
+    <widget class="QLineEdit" name="candidate3Name"/>
+   </item>
+   <item row="15" column="10">
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="text">
+      <string>Cancel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLabel" name="label_14">
+     <property name="text">
+      <string>Batch</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="3">
+    <widget class="QLineEdit" name="candidate2Batch"/>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLabel" name="label_15">
+     <property name="text">
+      <string>RollNumber</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="3">
+    <widget class="QLineEdit" name="candidate2Name"/>
+   </item>
+   <item row="1" column="3">
+    <widget class="QLineEdit" name="candidate1Name"/>
+   </item>
+   <item row="5" column="3">
+    <widget class="QLineEdit" name="candidate1Batch"/>
+   </item>
+   <item row="11" column="1">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="1">
+    <widget class="QLabel" name="label_13">
+     <property name="text">
+      <string>Department</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="3">
+    <widget class="QLineEdit" name="candidate3Department"/>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Department</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="7">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>Submit</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="3">
+    <widget class="QLineEdit" name="candidate2Department"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Candidate1</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="3">
+    <widget class="QLineEdit" name="candidate2RollNumber"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Candidate2</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Department</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="3">
+    <widget class="QLineEdit" name="candidate3Batch"/>
+   </item>
+   <item row="14" column="1">
+    <widget class="QLabel" name="label_12">
+     <property name="text">
+      <string>Batch</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

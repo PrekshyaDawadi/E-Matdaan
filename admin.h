@@ -2,7 +2,7 @@
 #define ADMIN_H
 #include "adminmainwindow.h"
 #include <QDialog>
-
+#include <QSqlDatabase>
 namespace Ui {
 class admin;
 }
@@ -20,6 +20,7 @@ private slots:
 
 private:
     Ui::admin *ui;
+    QSqlDatabase db;
 };
 
 #endif // ADMIN_H

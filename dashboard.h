@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "ballot.h"
+#include "mainwindow.h"
 
 namespace Ui {
 class dashboard;
