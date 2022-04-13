@@ -13,7 +13,6 @@ QString depart;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    //db(db)
 {
 
     ui->setupUi(this);
@@ -24,15 +23,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->RollNumber->setPlaceholderText("Enter your Roll Number");
     ui->LoginUsername->setPlaceholderText("Enter your username");
     ui->LoginPassword->setPlaceholderText("Enter your password");
-
-    QSqlDatabase db;
-
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/studentInformation.sqlite");
-
-    if(!db.open()){
-        QMessageBox::information(this, "Connectivity", "Database not connected.");
-    }
 }
 
 MainWindow::~MainWindow()
@@ -43,6 +33,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+
+    db = QSqlDatabase::database("qt_sql_default_connection");
+
+    if(!db.open()){
+        QMessageBox::information(this, "Connectivity", "Database not connected.");
+    }
 
     if(db.isOpen()){
 

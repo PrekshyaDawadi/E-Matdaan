@@ -24,8 +24,7 @@ void CandidatesInformationInput::on_pushButton_clicked()
 {
 
     {
-        QSqlDatabase  db = QSqlDatabase::addDatabase("QSQLITE");
-        db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/studentInformation.sqlite");
+        db = QSqlDatabase::database("qt_sql_default_connection");
         //QString candidate1Name, candidate2Name, candidate3Name;
         QString candidateName[3];
         //QString candidate2Department, candidate3Department, candidate1Department;
@@ -59,27 +58,26 @@ void CandidatesInformationInput::on_pushButton_clicked()
             QString Department = TableName;
             QString Batch = candidateBatch[i];
 
-            QSqlQuery qry(db);
+
             if(!db.open())
-                qWarning() << "ERROR: " << db.lastError();
+                qWarning() << "ERROR in db: " << db.lastError();
 
             else{
-                qry.prepare("INSERT INTO candidatesInformation (Roll, Name, Department, Batch)\
-                            VALUES (:Roll, :Name, :Department, :Batch);");
-
+                QSqlQuery qry;
+                qry.prepare("INSERT INTO candidatesInformation (Roll, Name, Department, Batch) "
+                            "VALUES (:Roll, :Name, :Department, :Batch)");
                 qry.bindValue(":Roll", Roll);
                 qry.bindValue(":Name", Name);
+                qry.bindValue(":Department", TableName);
                 qry.bindValue(":Batch", Batch);
-                qry.bindValue(":Department", Department);
-
                 qry.exec();
                 if(!qry.exec()){
-                    qWarning() << "ERROR: " << db.lastError();
+                    qDebug() << "ERROR in query: " << db.lastError();
                 }
             }
         }
     }
     //db.close();
-   // QSqlDatabase::removeDatabase("StudentInformation");
+    // QSqlDatabase::removeDatabase("StudentInformation");
 
 }

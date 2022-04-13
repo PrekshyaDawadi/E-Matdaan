@@ -20,3 +20,8 @@ void dashboard::on_pushButton_4_clicked()
   b.setModal(true);
   b.exec();
 }
+
+void dashboard::on_pushButton_clicked()
+{
+
+}

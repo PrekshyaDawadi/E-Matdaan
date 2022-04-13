@@ -11,8 +11,7 @@ ballot::ballot(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/studentInformation.sqlite");
+    db = QSqlDatabase::database("qt_sql_default_connection");
 
     if(!db.open()){
         QMessageBox::information(this, "Connectivity", "Database not connected.");
