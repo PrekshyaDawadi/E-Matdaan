@@ -21,10 +21,9 @@ ballot::ballot(QWidget *parent) :
         QSqlQuery qry(db);
         qry.exec("select Name from candidatesInformation where Department = '"+depart+"';");
         int i= 0;
-        while(qry.next()){
+        while(qry.next() == true){
             QSqlRecord rec = qry.record();
             int nameCol = rec.indexOf("Name"); // index of the field "name"
-            qry.next();
             QString name = qry.value(nameCol).toString();
             if(i == 0){
              ui->candidate1->setText(name);
@@ -34,6 +33,7 @@ ballot::ballot(QWidget *parent) :
             ui->candidate3->setText(name);
             }
             i++;
+            //qry.next();
         }
     }
 

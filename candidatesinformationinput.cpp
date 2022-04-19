@@ -72,7 +72,7 @@ void CandidatesInformationInput::on_pushButton_clicked()
                     qDebug()<<"Error in selecting query: "<<db.lastError();
                 }
             }
-            if(candidatesCount >= 3){
+            if(candidatesCount > 3){
                 QMessageBox::information(this, "Failed!", "Candidates already selected for the selected department.");
                 exit(0);
             } else{
