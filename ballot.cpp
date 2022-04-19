@@ -53,7 +53,7 @@ void ballot::on_pushButton_clicked()
 
     else{
 
-        QSqlQuery qry; 
+        QSqlQuery qry;
         if(ui->candidate1->isChecked()){
             count1++;
             qry.prepare("INSERT INTO VoteCount (Candidate1, Candidate2, Candidate3) VALUES (:count1, :count2, :count3);");

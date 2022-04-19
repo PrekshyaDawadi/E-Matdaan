@@ -1,5 +1,8 @@
 #include "dashboard.h"
 #include "ui_dashboard.h"
+#include"candidateinfo.h"
+#include"help.h"
+#include"logout.h"
 
 dashboard::dashboard(QWidget *parent) :
     QDialog(parent),
@@ -23,5 +26,24 @@ void dashboard::on_pushButton_4_clicked()
 
 void dashboard::on_pushButton_clicked()
 {
-
+    this->hide();
+    candidateinfo c;
+    c.setModal(true);
+    c.exec();
 }
+
+
+void dashboard::on_pushButton_3_clicked()
+{
+    this->hide();
+    help d;
+    d.setModal(true);
+    d.exec();
+}
+
+
+void dashboard::on_pushButton_5_clicked()
+{
+   this->close();
+   }
+

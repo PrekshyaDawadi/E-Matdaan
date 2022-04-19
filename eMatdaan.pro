@@ -19,26 +19,44 @@ SOURCES += \
     admin.cpp \
     adminmainwindow.cpp \
     ballot.cpp \
+    candidateinfo.cpp \
     candidatesinformationinput.cpp \
+    check.cpp \
+    contacts.cpp \
     dashboard.cpp \
+    help.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    systeminfo.cpp \
+    technical.cpp
 
 HEADERS += \
     admin.h \
     adminmainwindow.h \
     ballot.h \
+    candidateinfo.h \
     candidatesinformationinput.h \
+    check.h \
+    contacts.h \
     dashboard.h \
-    mainwindow.h
+    help.h \
+    mainwindow.h \
+    systeminfo.h \
+    technical.h
 
 FORMS += \
     admin.ui \
     adminmainwindow.ui \
     ballot.ui \
+    candidateinfo.ui \
     candidatesinformationinput.ui \
+    check.ui \
+    contacts.ui \
     dashboard.ui \
-    mainwindow.ui
+    help.ui \
+    mainwindow.ui \
+    systeminfo.ui \
+    technical.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

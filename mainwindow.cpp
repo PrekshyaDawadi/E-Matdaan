@@ -49,15 +49,18 @@ void MainWindow::on_pushButton_clicked()
         QString UserName =ui->UserName->text();
         QString Password =ui->Password->text();
         QString Batch =ui->Batch->text();
+        QString Department = ui->Department->currentText();
 
         if(ui->Department->currentText() == "Computer Science"){
             TableName = "ComputerScience";
+            //QString Department = "cs";
             selectedCandidates = "selectedComputerScience";
-            QMessageBox::information(this, "Programmer Info","Table name set to computer science");
+            //QMessageBox::information(this, "Programmer Info","Table name set to computer science");
         }else{
             TableName = "ComputerEngineering";
+            //QString Department = "ce";
             selectedCandidates = "selectedComputerEngineering";
-            QMessageBox::information(this, "Programmer Info","Table name set to computer engineering");
+            //QMessageBox::information(this, "Programmer Info","Table name set to computer engineering");
         }
 
         // Check and Insert into the database
@@ -65,11 +68,12 @@ void MainWindow::on_pushButton_clicked()
             QSqlQuery qry;
 
             if(qry.exec("select * from '"+TableName+"' where FirstName == '"+FirstName+"' and LastName == '"+LastName+"' and RollNumber == '"+RollNumber+"' and Batch == '"+Batch+"'")){
-                QMessageBox::information(this, "programmer info", "Entered '"+TableName+"' loop.");
+                //QMessageBox::information(this, "programmer info", "Entered '"+TableName+"' loop.");
                 int count = 0;
                 while (qry.next() == true){
                     count++;
-                    QMessageBox::information(this, "programmer info", "Entered qry.next() loop.");
+                    //QString scount = QString::number(count);
+                    //QMessageBox::information(this, "programmer info", "Value of count: '"+scount+"'");
 
                 }
 
@@ -86,7 +90,7 @@ void MainWindow::on_pushButton_clicked()
 
                 if(count==1){
                     qry.prepare("INSERT INTO BasicInformation (RollNumber, FirstName, LastName, UserName, Password, Batch, Department)\
-                                VALUES (:RollNumber, :FirstName, :LastName, :UserName, :Password, :Batch, :TableName);");
+                                VALUES (:RollNumber, :FirstName, :LastName, :UserName, :Password, :Batch, :Department);");
 
                             qry.bindValue(":RollNumber", RollNumber);
                     qry.bindValue(":FirstName", FirstName);
@@ -94,9 +98,21 @@ void MainWindow::on_pushButton_clicked()
                     qry.bindValue(":UserName", UserName);
                     qry.bindValue(":Password", Password);
                     qry.bindValue(":Batch", Batch);
-                    qry.bindValue(":Department", TableName);
+                    qry.bindValue(":Department", Department);
 
                     qry.exec();
+
+                    if(!qry.exec())
+                    {
+                        qDebug() << qry.lastError();
+                    }
+                    else
+                    {
+                        qDebug() << "Success!";
+                        QMessageBox::information(this, "programmer info", "qry.exec() returned true.");
+
+                    }
+
                     QMessageBox::information(this, "Successful!", "Your account was successfully created!");
                 }
                 if(count>1){
