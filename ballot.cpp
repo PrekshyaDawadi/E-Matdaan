@@ -26,11 +26,11 @@ ballot::ballot(QWidget *parent) :
             int nameCol = rec.indexOf("Name"); // index of the field "name"
             QString name = qry.value(nameCol).toString();
             if(i == 0){
-             ui->candidate1->setText(name);
+                ui->candidate1->setText(name);
             }else if(i==1){
-            ui->candidate2->setText(name);
+                ui->candidate2->setText(name);
             }else{
-            ui->candidate3->setText(name);
+                ui->candidate3->setText(name);
             }
             i++;
             //qry.next();
@@ -47,7 +47,7 @@ ballot::~ballot()
 
 void ballot::on_pushButton_clicked()
 {
-
+    db = QSqlDatabase::database("qt_sql_default_connection");
     if(!db.open())
       qWarning() << "ERROR: " << db.lastError();
 

@@ -4,7 +4,8 @@
 #include <QDialog>
 #include "ballot.h"
 #include "mainwindow.h"
-
+#include "candidatesinformationinput.h"
+#include "adminmainwindow.h"
 namespace Ui {
 class dashboard;
 }
@@ -24,8 +25,11 @@ private slots:
     void on_pushButton_3_clicked();
     void on_pushButton_5_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::dashboard *ui;
+    QSqlDatabase  db;
 };
 
 #endif // DASHBOARD_H

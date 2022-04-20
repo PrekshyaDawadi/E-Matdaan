@@ -8,6 +8,8 @@
 #include <QDebug>
 #include "mainwindow.h"
 #include <QString>
+#include "adminmainwindow.h"
+#include "dashboard.h"
 
 
 namespace Ui {

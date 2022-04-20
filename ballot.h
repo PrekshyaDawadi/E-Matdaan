@@ -6,6 +6,7 @@
 #include <QSqlDatabase>
 #include <QMessageBox>
 #include "dashboard.h"
+#include "mainwindow.h"
 
 namespace Ui {
 class ballot;

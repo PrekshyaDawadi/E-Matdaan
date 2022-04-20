@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1099</width>
-    <height>684</height>
+    <width>1508</width>
+    <height>957</height>
    </rect>
   </property>
   <property name="palette">
@@ -590,6 +590,7 @@
   <property name="font">
    <font>
     <family>Times New Roman</family>
+    <weight>75</weight>
     <bold>true</bold>
    </font>
   </property>
@@ -599,10 +600,10 @@
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>39</y>
-     <width>861</width>
-     <height>641</height>
+     <x>10</x>
+     <y>20</y>
+     <width>1061</width>
+     <height>671</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -612,6 +613,7 @@
        <font>
         <family>Times New Roman</family>
         <pointsize>18</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -652,25 +654,12 @@
        <font>
         <family>Times New Roman</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="text">
-       <string>Review SignUp Requests</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="font">
-       <font>
-        <family>Times New Roman</family>
-        <pointsize>16</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Candidates Confirmation</string>
+       <string>View the Signed Up Database</string>
       </property>
      </widget>
     </item>
@@ -680,6 +669,7 @@
        <font>
         <family>Times New Roman</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -694,11 +684,12 @@
        <font>
         <family>Times New Roman</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="text">
-       <string>Release Results</string>
+       <string>Release Computer Science Results</string>
       </property>
      </widget>
     </item>
@@ -708,6 +699,7 @@
        <font>
         <family>Times New Roman</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -724,11 +716,49 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>192</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Release Computer Engineering Results</string>
+      </property>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>adminMainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>55</x>
+     <y>289</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>562</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

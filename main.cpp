@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 {
     QSqlDatabase  db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/studentInformation.sqlite");
+    db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/E-Matdaan.sqlite");
 
     if(!db.open()){
         QMessageBox msg;

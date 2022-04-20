@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1237</width>
-    <height>677</height>
+    <width>1301</width>
+    <height>703</height>
    </rect>
   </property>
   <property name="palette">
@@ -632,16 +632,16 @@
      <item row="6" column="0">
       <widget class="QComboBox" name="Department">
        <property name="currentText">
-        <string>Computer Science</string>
+        <string>ComputerScience</string>
        </property>
        <item>
         <property name="text">
-         <string>Computer Science</string>
+         <string>ComputerScience</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Computer Engineering</string>
+         <string>ComputerEngineering</string>
         </property>
        </item>
        <item>
@@ -672,6 +672,7 @@
      <font>
       <family>Times New Roman</family>
       <pointsize>12</pointsize>
+      <weight>50</weight>
       <bold>false</bold>
      </font>
     </property>
@@ -692,6 +693,7 @@
      <font>
       <family>Times New Roman</family>
       <pointsize>12</pointsize>
+      <weight>50</weight>
       <bold>false</bold>
      </font>
     </property>
@@ -712,6 +714,7 @@
      <font>
       <family>Times New Roman</family>
       <pointsize>20</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -735,6 +738,7 @@
         <font>
          <family>Times New Roman</family>
          <pointsize>14</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -765,6 +769,7 @@
         <font>
          <family>Times New Roman</family>
          <pointsize>14</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -799,6 +804,7 @@
         <font>
          <family>Times New Roman</family>
          <pointsize>12</pointsize>
+         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
@@ -826,6 +832,7 @@
         <font>
          <family>Times New Roman</family>
          <pointsize>14</pointsize>
+         <weight>75</weight>
          <italic>false</italic>
          <bold>true</bold>
          <underline>false</underline>
@@ -843,6 +850,7 @@
         <font>
          <family>Times New Roman</family>
          <pointsize>12</pointsize>
+         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
@@ -879,6 +887,7 @@
      <font>
       <family>Times New Roman</family>
       <pointsize>20</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -899,6 +908,7 @@
      <font>
       <family>Times New Roman</family>
       <pointsize>14</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -919,6 +929,7 @@
      <font>
       <family>Times New Roman</family>
       <pointsize>14</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -939,6 +950,7 @@
      <font>
       <family>Times New Roman</family>
       <pointsize>14</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -959,6 +971,7 @@
      <font>
       <family>Times New Roman</family>
       <pointsize>14</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -979,6 +992,7 @@
      <font>
       <family>Times New Roman</family>
       <pointsize>14</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -999,6 +1013,7 @@
      <font>
       <family>Times New Roman</family>
       <pointsize>14</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -1019,6 +1034,7 @@
      <font>
       <family>Times New Roman</family>
       <pointsize>14</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>

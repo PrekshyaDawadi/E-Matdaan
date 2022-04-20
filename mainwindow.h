@@ -19,6 +19,7 @@ QT_END_NAMESPACE
 extern QString TableName;
 extern QString selectedCandidates;
 extern QString depart;
+extern int bat;
 
 class MainWindow : public QMainWindow
 {

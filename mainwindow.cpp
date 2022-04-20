@@ -6,6 +6,7 @@
 QString TableName;
 QString selectedCandidates;
 QString depart;
+int bat;
 
 
 
@@ -51,7 +52,7 @@ void MainWindow::on_pushButton_clicked()
         QString Batch =ui->Batch->text();
         QString Department = ui->Department->currentText();
 
-        if(ui->Department->currentText() == "Computer Science"){
+        if(ui->Department->currentText() == "ComputerScience"){
             TableName = "ComputerScience";
             //QString Department = "cs";
             selectedCandidates = "selectedComputerScience";
@@ -152,14 +153,24 @@ void MainWindow::on_pushButton_3_clicked()
         }
         if(count==1){
 
-            qry.exec("select Department from BasicInformation where UserName == '"+username+"' and Password == '"+password+"'");
-            //depart = qry.boundValue(1).toString();
-            QSqlRecord rec = qry.record();
-            int nameCol = rec.indexOf("Department"); // index of the field "name"
-            qry.next();
-            depart = qry.value(nameCol).toString();
+            QSqlQuery query("SELECT * FROM BasicInformation where UserName == '"+username+"' and Password == '"+password+"'");
+            int fieldNo = query.record().indexOf("Department");
+            int fieldNo2 = query.record().indexOf("Batch");
+            while (query.next()) {
+                depart = query.value(fieldNo).toString();
+                bat = query.value(fieldNo2).toInt();
+            }
+            qDebug() << depart;
+            qDebug() << bat;
 
-            // qDebug() << depart;
+
+            if(!query.exec()){
+                qDebug()<<"Error in selecting query: "<<db.lastError();
+            }
+
+
+
+
 
             this->hide();
             dashboard dash;

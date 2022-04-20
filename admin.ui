@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1238</width>
-    <height>674</height>
+    <width>1509</width>
+    <height>953</height>
    </rect>
   </property>
   <property name="palette">
@@ -590,6 +590,7 @@
   <property name="font">
    <font>
     <family>Times New Roman</family>
+    <weight>75</weight>
     <bold>true</bold>
    </font>
   </property>
@@ -612,6 +613,7 @@
        <font>
         <family>Times New Roman</family>
         <pointsize>20</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -652,6 +654,7 @@
        <font>
         <family>Times New Roman</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -679,6 +682,7 @@
        <font>
         <family>Times New Roman</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>

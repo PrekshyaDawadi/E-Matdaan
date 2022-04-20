@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>551</width>
-    <height>527</height>
+    <width>2068</width>
+    <height>1298</height>
    </rect>
   </property>
   <property name="palette">
@@ -590,6 +590,7 @@
   <property name="font">
    <font>
     <family>Times New Roman</family>
+    <weight>75</weight>
     <bold>true</bold>
    </font>
   </property>
@@ -609,6 +610,7 @@
     <font>
      <family>Times New Roman</family>
      <pointsize>21</pointsize>
+     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -632,6 +634,7 @@
        <font>
         <family>Times New Roman</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -652,6 +655,7 @@
        <font>
         <family>Times New Roman</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -660,12 +664,13 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
+    <item row="5" column="1">
      <widget class="QPushButton" name="pushButton_5">
       <property name="font">
        <font>
         <family>Times New Roman</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -674,17 +679,30 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
+    <item row="3" column="1">
      <widget class="QPushButton" name="pushButton_3">
       <property name="font">
        <font>
         <family>Times New Roman</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="text">
        <string>Help</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Results</string>
       </property>
      </widget>
     </item>

@@ -6,6 +6,12 @@
 #include <QSqlDatabase>
 #include <QSqlTableModel>
 #include "candidatesinformationinput.h"
+#include <QString>
+#include "dashboard.h"
+#include "mainwindow.h"
+
+extern QString winnerCS;
+extern QString winnerCE;
 
 namespace Ui {
 class adminMainWindow;
@@ -24,8 +30,13 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::adminMainWindow *ui;
+    QSqlDatabase  db;
 };
 
 #endif // ADMINMAINWINDOW_H
