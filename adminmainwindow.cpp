@@ -168,14 +168,30 @@ void adminMainWindow::on_pushButton_clicked()
           reply = QMessageBox::question(this, "Delete", "Do you want to delete the candidates and the results?",
                                         QMessageBox::Yes|QMessageBox::No);
           if (reply == QMessageBox::Yes) {
-              QSqlQuery qry;
-              qry.exec("DELETE FROM Results, candidatesInformation, VoteCountComputerScience, VoteCountComputerEngineering;");
 
-            if(qry.exec()){
+              // Fix this. This should all work using one line of code.
+              QSqlQuery query;
+              query.prepare("DELETE FROM Results");
+
+              query.exec();
+
+              query.prepare("DELETE FROM candidatesInformation");
+
+              query.exec();
+
+              query.prepare("DELETE FROM VoteCountComputerScience");
+
+              query.exec();
+
+              query.prepare("DELETE FROM VoteCountComputerEngineering");
+
+              query.exec();
+
+            if(query.exec()){
                 QMessageBox::information(this, "Confirmed", "Deletion successful!");
             }
-            if(!qry.exec()){
-                qDebug()<<"Deleting records: "<<qry.lastError();
+            if(!query.exec()){
+                qDebug()<<"Deleting records: "<<query.lastError();
                 QMessageBox::information(this, "Failed!", "Your action failed!");
             }
           } else{
