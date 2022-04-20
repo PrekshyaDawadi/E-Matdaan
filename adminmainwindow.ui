@@ -693,7 +693,7 @@
       </property>
      </widget>
     </item>
-    <item row="8" column="0">
+    <item row="9" column="0">
      <widget class="QPushButton" name="pushButton_5">
       <property name="font">
        <font>
@@ -705,6 +705,18 @@
       </property>
       <property name="text">
        <string>Log out</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QPushButton" name="pushButton">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Clear Database</string>
       </property>
      </widget>
     </item>

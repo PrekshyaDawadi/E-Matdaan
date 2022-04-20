@@ -100,3 +100,11 @@ void CandidatesInformationInput::on_pushButton_clicked()
 //db.close();
 // QSqlDatabase::removeDatabase("StudentInformation");
 
+
+void CandidatesInformationInput::on_pushButton_3_clicked()
+{
+    this->hide();
+    adminMainWindow c;
+    c.setModal(true);
+    c.exec();
+}

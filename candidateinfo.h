@@ -2,6 +2,7 @@
 #define CANDIDATEINFO_H
 
 #include <QDialog>
+#include "dashboard.h"
 
 namespace Ui {
 class candidateinfo;
@@ -14,6 +15,9 @@ class candidateinfo : public QDialog
 public:
     explicit candidateinfo(QWidget *parent = nullptr);
     ~candidateinfo();
+
+private slots:
+    void on_pushButton_2_clicked();
 
 private:
     Ui::candidateinfo *ui;

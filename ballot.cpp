@@ -139,3 +139,11 @@ void ballot::on_pushButton_clicked()
 
 
 }
+
+void ballot::on_pushButton_2_clicked()
+{
+    this->hide();
+    dashboard c;
+    c.setModal(true);
+    c.exec();
+}

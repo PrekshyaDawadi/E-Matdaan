@@ -159,3 +159,32 @@ void adminMainWindow::on_pushButton_4_clicked()
 
         }
 
+
+void adminMainWindow::on_pushButton_clicked()
+{
+    db = QSqlDatabase::database("qt_sql_default_connection");
+    if(db.open()){
+        QMessageBox::StandardButton reply;
+          reply = QMessageBox::question(this, "Delete", "Do you want to delete the candidates and the results?",
+                                        QMessageBox::Yes|QMessageBox::No);
+          if (reply == QMessageBox::Yes) {
+              QSqlQuery qry;
+              qry.exec("DELETE FROM Results, candidatesInformation, VoteCountComputerScience, VoteCountComputerEngineering;");
+
+            if(qry.exec()){
+                QMessageBox::information(this, "Confirmed", "Deletion successful!");
+            }
+            if(!qry.exec()){
+                qDebug()<<"Deleting records: "<<qry.lastError();
+                QMessageBox::information(this, "Failed!", "Your action failed!");
+            }
+          } else{
+              QMessageBox::information(this, "cancelled", "Action cancelled.");
+          }
+
+    } else{
+        qDebug()<<"Database not open.";
+    }
+
+
+}
