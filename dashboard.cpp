@@ -63,17 +63,17 @@ void dashboard::on_pushButton_2_clicked()
     // select a value from data base and in the condition I keep any datatype other than string as a constain.
 
     qry.exec("SELECT Winner FROM Results WHERE Department = '"+depart+"' AND Batch = '"+batch+"'");
-
+    QString name;
     while(qry.next()){
         QSqlRecord rec = qry.record();
         int nameCol = rec.indexOf("Winner");// index of the field "name"
-        QString name = qry.value(nameCol).toString();
+        name = qry.value(nameCol).toString();
         qDebug() << name;
-        QMessageBox::information(nullptr, "Title",
-                                 QString("The winner of this round of CR elections is: %1")
-                                 .arg(name));
 
     }
+    QMessageBox::information(nullptr, "Title",
+                             QString("The winner of this round of CR elections is: %1")
+                             .arg(name));
     if(!qry.next()){
         qDebug()<<"Error while selecting data from results table. next -> "<<qry.lastError().text();
     }

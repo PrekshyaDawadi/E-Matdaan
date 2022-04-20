@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1508</width>
-    <height>957</height>
+    <width>1787</width>
+    <height>1131</height>
    </rect>
   </property>
   <property name="palette">
@@ -648,22 +648,7 @@
       </property>
      </spacer>
     </item>
-    <item row="3" column="0">
-     <widget class="QPushButton" name="pushButton">
-      <property name="font">
-       <font>
-        <family>Times New Roman</family>
-        <pointsize>16</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>View the Signed Up Database</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
+    <item row="4" column="0">
      <widget class="QPushButton" name="pushButton_3">
       <property name="font">
        <font>
@@ -678,7 +663,7 @@
       </property>
      </widget>
     </item>
-    <item row="7" column="0">
+    <item row="6" column="0">
      <widget class="QPushButton" name="pushButton_4">
       <property name="font">
        <font>
@@ -693,38 +678,7 @@
       </property>
      </widget>
     </item>
-    <item row="9" column="0">
-     <widget class="QPushButton" name="pushButton_5">
-      <property name="font">
-       <font>
-        <family>Times New Roman</family>
-        <pointsize>16</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Log out</string>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="0" colspan="2">
-     <widget class="QTableView" name="tableView">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>192</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="0">
+    <item row="7" column="0">
      <widget class="QPushButton" name="pushButton_2">
       <property name="font">
        <font>
@@ -736,6 +690,21 @@
       </property>
       <property name="text">
        <string>Release Computer Engineering Results</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Log out</string>
       </property>
      </widget>
     </item>

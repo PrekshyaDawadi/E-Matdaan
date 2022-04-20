@@ -15,12 +15,6 @@ adminMainWindow::~adminMainWindow()
     delete ui;
 }
 
-void adminMainWindow::on_pushButton_clicked()
-{
-    //Signup Table View.
-
-
-}
 
 void adminMainWindow::on_pushButton_3_clicked()
 {
@@ -87,7 +81,7 @@ void adminMainWindow::on_pushButton_4_clicked()
        // qry.exec("insert into Results (Department, Batch, Winner) values(:Department, :Batch, :Winner);");
         //qry.exec();
         if(!qry.exec()){
-            qDebug()<<"Error in inserting into results.";
+            qDebug()<<"Error in inserting into results."<<qry.lastError();
         }
       if(qry.exec() == true){
           QMessageBox::information(this, "Success", "Results Released!");
@@ -144,6 +138,7 @@ void adminMainWindow::on_pushButton_4_clicked()
             else{
                 Winner = candidate3Name;
             }
+
             qry.prepare("INSERT INTO Results (Department, Batch, Winner) "
                               "VALUES (:Department, :Batch, :Winner)");
                 qry.bindValue(":Department", Department);
@@ -161,5 +156,6 @@ void adminMainWindow::on_pushButton_4_clicked()
              QMessageBox::information(this, "Failed", "Results Release failed!");
            }
         }
+
         }
 
