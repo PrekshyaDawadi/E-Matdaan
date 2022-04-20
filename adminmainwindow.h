@@ -9,6 +9,7 @@
 #include <QString>
 #include "dashboard.h"
 #include "mainwindow.h"
+#include <iostream>
 
 extern QString winnerCS;
 extern QString winnerCE;

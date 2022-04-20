@@ -160,8 +160,8 @@ void MainWindow::on_pushButton_3_clicked()
                 depart = query.value(fieldNo).toString();
                 bat = query.value(fieldNo2).toInt();
             }
-            qDebug() << depart;
-            qDebug() << bat;
+            //qDebug() << depart;
+            //qDebug() << bat;
 
 
             if(!query.exec()){

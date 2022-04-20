@@ -24,10 +24,10 @@ dashboard::~dashboard()
 
 void dashboard::on_pushButton_4_clicked()
 {
-  this->hide();
-  ballot b;
-  b.setModal(true);
-  b.exec();
+    this->hide();
+    ballot b;
+    b.setModal(true);
+    b.exec();
 }
 
 void dashboard::on_pushButton_clicked()
@@ -50,32 +50,46 @@ void dashboard::on_pushButton_3_clicked()
 
 void dashboard::on_pushButton_5_clicked()
 {
-   this->close();
+    this->close();
 }
 
 
 void dashboard::on_pushButton_2_clicked()
 {
-        QSqlQuery qry(db);
-        //QString winner;
-//        if(depart == "Computer Science"){
+    QSqlQuery qry(db);
+    //QString winner;
+    //        if(depart == "Computer Science"){
 
-//            std::cout<<"Entered Computer Science"<<std::endl;
-//        }else if(depart == "Computer Engineering"){
-//            winner = winnerCE;
-//            std::cout<<"Entered Computer Engineering"<<std::endl;
-//        }else{
-//            std::cout<<"Didnot enter depart if-statement. "<<std::endl;
-//        }
-        qry.exec("select Winner from Results where Department = '"+depart+"' and Batch = '"+bat+"';");
-//            QSqlQuery qry;
-//            qry.exec("SELECT Name FROM ROW_NUMBER(1) AS 'name' FROM candidatesInformation");
-//            QMessageBox::information(this, "Results", "The winner for this round of CR selection is '"+name+"'");
-            QString candidate1, candidate2, candidate3;
-            while(qry.next() == true){
-                QSqlRecord rec = qry.record();
-                int nameCol = rec.indexOf("Winner"); // index of the field "name"
-                QString name = qry.value(nameCol).toString();
-                QMessageBox::information(this, "Results", "The winner for this round of CR selection is '"+name+"'");
-            }
+    //            std::cout<<"Entered Computer Science"<<std::endl;
+    //        }else if(depart == "Computer Engineering"){
+    //            winner = winnerCE;
+    //            std::cout<<"Entered Computer Engineering"<<std::endl;
+    //        }else{
+    //            std::cout<<"Didnot enter depart if-statement. "<<std::endl;
+    //        }
+    //qDebug()<<"Value of department :"<<depart;
+    //qDebug()<<"Value of batch :"<<bat;
+
+    qry.exec("SELECT Winner FROM Results WHERE Department = '"+depart+"' AND Batch = '"+bat+"'");
+    //            QSqlQuery qry;
+    //            qry.exec("SELECT Name FROM ROW_NUMBER(1) AS 'name' FROM candidatesInformation");
+    //            QMessageBox::information(this, "Results", "The winner for this round of CR selection is '"+name+"'");
+    //QString candidate1, candidate2, candidate3;
+    //qry.next();
+    while(qry.next()){
+        QSqlRecord rec = qry.record();
+        int nameCol = rec.indexOf("Winner");// index of the field "name"
+        QString name = qry.value(nameCol).toString();
+        qDebug() << name;
+        QMessageBox::information(nullptr, "Title",
+                                 QString("The winner of this round of CR elections is: %1")
+                                 .arg(name));
+
+    }
+                if(!qry.next()){
+                    qDebug()<<"Error while selecting data from results table. next -> "<<qry.lastError();
+                }
+    if(!qry.exec()){
+        qDebug()<<"Error while selecting data from results table.  exec-> "<<qry.lastError();
+    }
 }

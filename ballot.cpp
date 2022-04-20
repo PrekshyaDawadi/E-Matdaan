@@ -55,32 +55,71 @@ void ballot::on_pushButton_clicked()
 
         QSqlQuery qry;
         if(ui->candidate1->isChecked()){
-            count1++;
-            qry.prepare("INSERT INTO VoteCount (Candidate1, Candidate2, Candidate3) VALUES (:count1, :count2, :count3);");
-            qry.bindValue(":count1", count1);
-            qry.bindValue(":count2", count2);
-            qry.bindValue(":count3", count3);
+            count1 = 1;
+            if(depart == "ComputerScience"){
+                qry.prepare("INSERT INTO VoteCountComputerScience (Candidate1, Candidate2, Candidate3) VALUES (:count1, :count2, :count3);");
+                qry.bindValue(":count1", count1);
+                qry.bindValue(":count2", count2);
+                qry.bindValue(":count3", count3);
+                count1 = 0;
 
-            qry.exec();
+                qry.exec();
+            }else if(depart == "ComputerEngineering"){
+                qry.prepare("INSERT INTO VoteCountComputerEngineering (Candidate1, Candidate2, Candidate3) VALUES (:count1, :count2, :count3);");
+                qry.bindValue(":count1", count1);
+                qry.bindValue(":count2", count2);
+                qry.bindValue(":count3", count3);
+                count1 = 0;
+
+                qry.exec();
+            }else{
+                qDebug()<<"Error!!";
+            }
+
 
             //QMessageBox::information(this, "Success!", "If condition 1 entered.");
         } else if(ui->candidate2->isChecked()){
-            count2++;
-            qry.prepare("INSERT INTO VoteCount (Candidate1, Candidate2, Candidate3) VALUES (:count1, :count2, :count3);");
-            qry.bindValue(":count1", count1);
-            qry.bindValue(":count2", count2);
-            qry.bindValue(":count3", count3);
+            count2 = 1;
+            if(depart == "ComputerScience"){
+                qry.prepare("INSERT INTO VoteCountComputerScience (Candidate1, Candidate2, Candidate3) VALUES (:count1, :count2, :count3);");
+                qry.bindValue(":count1", count1);
+                qry.bindValue(":count2", count2);
+                qry.bindValue(":count3", count3);
+                count2 =0;
 
-            qry.exec();
-
+                qry.exec();
+            }else if(depart == "ComputerEngineering"){
+                qry.prepare("INSERT INTO VoteCountComputerEngineering (Candidate1, Candidate2, Candidate3) VALUES (:count1, :count2, :count3);");
+                qry.bindValue(":count1", count1);
+                qry.bindValue(":count2", count2);
+                qry.bindValue(":count3", count3);
+                count2 = 0;
+                qry.exec();
+            }else{
+                qDebug()<<"Error!!";
+            }
             //QMessageBox::information(this, "Success!", "If condition 2 entered.");
         }else if(ui->candidate3->isChecked()){
-            qry.prepare("INSERT INTO VoteCount (Candidate1, Candidate2, Candidate3) VALUES (:count1, :count2, :count3);");
-            qry.bindValue(":count1", count1);
-            qry.bindValue(":count2", count2);
-            qry.bindValue(":count3", count3);
+            count3 = 1;
+            if(depart == "ComputerScience"){
+                qry.prepare("INSERT INTO VoteCountComputerScience (Candidate1, Candidate2, Candidate3) VALUES (:count1, :count2, :count3);");
+                qry.bindValue(":count1", count1);
+                qry.bindValue(":count2", count2);
+                qry.bindValue(":count3", count3);
+                count3 = 0;
 
-            qry.exec();
+                qry.exec();
+            }else if(depart == "ComputerEngineering"){
+                qry.prepare("INSERT INTO VoteCountComputerEngineering (Candidate1, Candidate2, Candidate3) VALUES (:count1, :count2, :count3);");
+                qry.bindValue(":count1", count1);
+                qry.bindValue(":count2", count2);
+                qry.bindValue(":count3", count3);
+                count3 = 0;
+
+                qry.exec();
+            }else{
+                qDebug()<<"Error!!";
+            }
 
             //QMessageBox::information(this, "Success!", "If condition 3 entered.");
         }
