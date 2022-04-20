@@ -57,25 +57,13 @@ void dashboard::on_pushButton_5_clicked()
 void dashboard::on_pushButton_2_clicked()
 {
     QSqlQuery qry(db);
-    //QString winner;
-    //        if(depart == "Computer Science"){
+    QString batch = QString::number(bat); // converting int to string
 
-    //            std::cout<<"Entered Computer Science"<<std::endl;
-    //        }else if(depart == "Computer Engineering"){
-    //            winner = winnerCE;
-    //            std::cout<<"Entered Computer Engineering"<<std::endl;
-    //        }else{
-    //            std::cout<<"Didnot enter depart if-statement. "<<std::endl;
-    //        }
-    //qDebug()<<"Value of department :"<<depart;
-    //qDebug()<<"Value of batch :"<<bat;
+    // Got the QSqlError("","","") here. I have noticed I get this bug generally when I try to
+    // select a value from data base and in the condition I keep any datatype other than string as a constain.
 
-    qry.exec("SELECT Winner FROM Results WHERE Department = '"+depart+"' AND Batch = '"+bat+"'");
-    //            QSqlQuery qry;
-    //            qry.exec("SELECT Name FROM ROW_NUMBER(1) AS 'name' FROM candidatesInformation");
-    //            QMessageBox::information(this, "Results", "The winner for this round of CR selection is '"+name+"'");
-    //QString candidate1, candidate2, candidate3;
-    //qry.next();
+    qry.exec("SELECT Winner FROM Results WHERE Department = '"+depart+"' AND Batch = '"+batch+"'");
+
     while(qry.next()){
         QSqlRecord rec = qry.record();
         int nameCol = rec.indexOf("Winner");// index of the field "name"
@@ -86,9 +74,9 @@ void dashboard::on_pushButton_2_clicked()
                                  .arg(name));
 
     }
-                if(!qry.next()){
-                    qDebug()<<"Error while selecting data from results table. next -> "<<qry.lastError();
-                }
+    if(!qry.next()){
+        qDebug()<<"Error while selecting data from results table. next -> "<<qry.lastError().text();
+    }
     if(!qry.exec()){
         qDebug()<<"Error while selecting data from results table.  exec-> "<<qry.lastError();
     }
