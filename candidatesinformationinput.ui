@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>80</y>
+     <y>120</y>
      <width>91</width>
      <height>21</height>
     </rect>
@@ -30,7 +30,7 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>300</y>
+     <y>340</y>
      <width>82</width>
      <height>17</height>
     </rect>
@@ -42,10 +42,10 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>910</x>
-     <y>750</y>
-     <width>80</width>
-     <height>25</height>
+     <x>860</x>
+     <y>800</y>
+     <width>111</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="text">
@@ -56,9 +56,9 @@
    <property name="geometry">
     <rect>
      <x>1120</x>
-     <y>750</y>
-     <width>80</width>
-     <height>25</height>
+     <y>800</y>
+     <width>111</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="text">
@@ -69,7 +69,7 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>520</y>
+     <y>560</y>
      <width>82</width>
      <height>17</height>
     </rect>
@@ -78,24 +78,11 @@
     <string>Candidate3:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>9</x>
-     <y>9</y>
-     <width>156</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Select your Candidates</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>80</y>
+     <x>110</x>
+     <y>120</y>
      <width>41</width>
      <height>17</height>
     </rect>
@@ -107,8 +94,8 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>140</y>
+     <x>80</x>
+     <y>180</y>
      <width>82</width>
      <height>17</height>
     </rect>
@@ -120,8 +107,8 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>200</y>
+     <x>80</x>
+     <y>230</y>
      <width>84</width>
      <height>17</height>
     </rect>
@@ -133,8 +120,8 @@
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>300</y>
+     <x>100</x>
+     <y>340</y>
      <width>41</width>
      <height>17</height>
     </rect>
@@ -146,8 +133,8 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>350</y>
+     <x>80</x>
+     <y>390</y>
      <width>82</width>
      <height>17</height>
     </rect>
@@ -159,8 +146,8 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>410</y>
+     <x>80</x>
+     <y>450</y>
      <width>84</width>
      <height>17</height>
     </rect>
@@ -173,7 +160,7 @@
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>520</y>
+     <y>560</y>
      <width>41</width>
      <height>17</height>
     </rect>
@@ -185,8 +172,8 @@
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>570</y>
+     <x>80</x>
+     <y>620</y>
      <width>82</width>
      <height>17</height>
     </rect>
@@ -198,8 +185,8 @@
   <widget class="QLabel" name="label_13">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>620</y>
+     <x>80</x>
+     <y>680</y>
      <width>84</width>
      <height>17</height>
     </rect>
@@ -211,8 +198,8 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>133</x>
-     <y>59</y>
+     <x>170</x>
+     <y>100</y>
      <width>1081</width>
      <height>671</height>
     </rect>
@@ -221,46 +208,46 @@
     <item row="0" column="0">
      <widget class="QLineEdit" name="Candidate1Name"/>
     </item>
-    <item row="1" column="0">
-     <widget class="QLineEdit" name="Candidate1RollNumber"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLineEdit" name="Candidate1Department"/>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLineEdit" name="Candidate2Name"/>
-    </item>
-    <item row="14" column="0">
-     <widget class="QLineEdit" name="Candidate3Batch"/>
-    </item>
-    <item row="9" column="0">
-     <widget class="QLineEdit" name="Candidate2Batch"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLineEdit" name="Candidate1Batch"/>
-    </item>
-    <item row="12" column="0">
-     <widget class="QLineEdit" name="Candidate3RollNumber"/>
-    </item>
-    <item row="7" column="0">
+    <item row="10" column="0">
      <widget class="QLineEdit" name="Candidate2RollNumber"/>
     </item>
-    <item row="13" column="0">
+    <item row="12" column="0">
+     <widget class="QLineEdit" name="Candidate2Batch"/>
+    </item>
+    <item row="15" column="0">
+     <widget class="QLineEdit" name="Candidate3RollNumber"/>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLineEdit" name="Candidate1Batch"/>
+    </item>
+    <item row="16" column="0">
      <widget class="QLineEdit" name="Candidate3Department"/>
     </item>
     <item row="11" column="0">
+     <widget class="QLineEdit" name="Candidate2Department"/>
+    </item>
+    <item row="14" column="0">
      <widget class="QLineEdit" name="Candidate3Name"/>
     </item>
-    <item row="8" column="0">
-     <widget class="QLineEdit" name="Candidate2Department"/>
+    <item row="7" column="0">
+     <widget class="QLineEdit" name="Candidate2Name"/>
+    </item>
+    <item row="17" column="0">
+     <widget class="QLineEdit" name="Candidate3Batch"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLineEdit" name="Candidate1RollNumber"/>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLineEdit" name="Candidate1Department"/>
     </item>
    </layout>
   </widget>
   <widget class="QLabel" name="label_14">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>250</y>
+     <x>90</x>
+     <y>290</y>
      <width>67</width>
      <height>17</height>
     </rect>
@@ -272,8 +259,8 @@
   <widget class="QLabel" name="label_15">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>460</y>
+     <x>100</x>
+     <y>510</y>
      <width>67</width>
      <height>17</height>
     </rect>
@@ -285,8 +272,8 @@
   <widget class="QLabel" name="label_16">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>680</y>
+     <x>90</x>
+     <y>730</y>
      <width>67</width>
      <height>17</height>
     </rect>
@@ -298,18 +285,57 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>1010</x>
-     <y>750</y>
-     <width>89</width>
-     <height>25</height>
+     <x>990</x>
+     <y>800</y>
+     <width>111</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="text">
     <string>Back</string>
    </property>
   </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1641</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/img/Images/4b2a2a3bf5522767a4a6eab7d8feabdc.jpg);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#555753;&quot;&gt;Select your Candidates&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>pushButton_2</sender>

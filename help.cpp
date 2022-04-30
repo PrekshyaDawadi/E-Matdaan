@@ -4,6 +4,7 @@
 #include"technical.h"
 #include"contacts.h"
 #include"check.h"
+#include "dashboard.h"
 
 
 help::help(QWidget *parent) :
@@ -50,6 +51,15 @@ void help::on_pushButton_4_clicked()
 {
     this->hide();
     check d;
+    d.setModal(true);
+    d.exec();
+}
+
+
+void help::on_pushButton_6_clicked()
+{
+    this->hide();
+    dashboard d;
     d.setModal(true);
     d.exec();
 }

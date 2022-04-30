@@ -1,0 +1,45 @@
+<RCC>
+  <qresource prefix="/img">
+    <file>Images/0a66f310a5516e374fee6c1a166537e3.jpg</file>
+    <file>Images/0ca7323ea4cce1fdcbb24e0fc59a98b2.jpg</file>
+    <file>Images/0dead877004da328fd7415fe4f9a1aaf.jpg</file>
+    <file>Images/1eda959ee747f2b1b76b4f0a5a860200.jpg</file>
+    <file>Images/4b2a2a3bf5522767a4a6eab7d8feabdc.jpg</file>
+    <file>Images/4f9eebb8cc6c8b2210262f00b11e267d.jpg</file>
+    <file>Images/7a39ba602ffb0ea94bd991a0649427eb.jpg</file>
+    <file>Images/28b5d73ee66557f2dc7f10b47f55cba3.jpg</file>
+    <file>Images/106cb96388fc73791df022be661fa590.jpg</file>
+    <file>Images/141fcb10700ed533b2d0391ce5d480ac.jpg</file>
+    <file>Images/235c065ed492c393861b2b3baebb487f.jpg</file>
+    <file>Images/0297c4913b6720b0891b9f2032510850.jpg</file>
+    <file>Images/391dcb085312ade3d534630d378721c4.jpg</file>
+    <file>Images/742d916ba66dda749e95cb259a35a19f.jpg</file>
+    <file>Images/769bed136fea66ed4b49fdf829d800d6.jpg</file>
+    <file>Images/5065d9f6d3ad2a04c4ea78b7afb143ad.jpg</file>
+    <file>Images/5852179fa928f6bcdcf4597d8f85ef15.jpg</file>
+    <file>Images/6326674757f5134f0d262363cd6fca90.jpg</file>
+    <file>Images/aa2c37bb3356ae391585c921b573c4eb.jpg</file>
+    <file>Images/back.jpg</file>
+    <file>Images/bc991ed00ca225faafb73b6f6562e1fd.jpg</file>
+    <file>Images/c46ac3276a31ff6f8d22b4a90c1caa0e.jpg</file>
+    <file>Images/c56bcb324468aeb5802bad5c4b3366da.jpg</file>
+    <file>Images/ca122bdfe8b70616879d6d9ea6b8c9b5.jpg</file>
+    <file>Images/d88961e88f47f9694634f63606aef561.jpg</file>
+    <file>Images/e88b50b6a4d3dec3caae832a6d9f60e3.jpg</file>
+    <file>Images/election-political-campaign_74855-6383.webp</file>
+    <file>Images/f087f56d28bc880538c27365d895d4a2.jpg</file>
+    <file>Images/icon1.jpg</file>
+    <file>Images/icon2.jpg</file>
+    <file>Images/icon3.jpg</file>
+    <file>Images/icon4.jpg</file>
+    <file>Images/icon5.jpg</file>
+    <file>Images/images.jpeg</file>
+    <file>Images/index.jpeg</file>
+    <file>Images/istockphoto-688970380-612x612.jpg</file>
+    <file>Images/istockphoto-1215088144-612x612.jpg</file>
+    <file>Images/istockphoto-1258633187-612x612.jpg</file>
+    <file>Images/istockphoto-1269463469-612x612.jpg</file>
+    <file>Images/pl.jpg</file>
+    <file>Images/political-candidates-and-people-taking-clip-art-vector_gg129077687.jpg</file>
+  </qresource>
+</RCC>
