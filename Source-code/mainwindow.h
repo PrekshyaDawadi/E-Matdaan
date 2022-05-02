@@ -20,6 +20,7 @@ extern QString TableName;
 extern QString selectedCandidates;
 extern QString depart;
 extern int bat;
+extern QString username, password;
 
 class MainWindow : public QMainWindow
 {

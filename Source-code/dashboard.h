@@ -2,7 +2,7 @@
 #define DASHBOARD_H
 
 #include <QDialog>
-#include "ballot.h"
+//#include "ballot.h"
 #include "mainwindow.h"
 #include "candidatesinformationinput.h"
 #include "adminmainwindow.h"
@@ -18,6 +18,10 @@ public:
     explicit dashboard(QWidget *parent = nullptr);
     ~dashboard();
 
+    friend class adminmainwindow;
+    friend class  ballot;
+    Ui::dashboard *ui;
+
 private slots:
     void on_pushButton_4_clicked();
 
@@ -28,7 +32,7 @@ private slots:
     void on_pushButton_2_clicked();
 
 private:
-    Ui::dashboard *ui;
+
     QSqlDatabase  db;
 };
 

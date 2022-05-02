@@ -7,6 +7,7 @@ QString TableName;
 QString selectedCandidates;
 QString depart;
 int bat;
+QString username, password;
 
 
 
@@ -141,7 +142,6 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    QString username, password;
     username = ui->LoginUsername->text();
     password = ui->LoginPassword->text();
     QSqlQuery qry;

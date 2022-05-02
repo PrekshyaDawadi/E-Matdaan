@@ -190,6 +190,9 @@ void adminMainWindow::on_pushButton_clicked()
 
               query.exec();
 
+//              query.prepare("DELETE FROM ResultStatus");
+//              query.exec();
+
             if(query.exec()){
                 QMessageBox::information(this, "Confirmed", "Deletion successful!");
             }
@@ -207,3 +210,17 @@ void adminMainWindow::on_pushButton_clicked()
 
 
 }
+
+void adminMainWindow::on_pushButton_6_clicked()
+{
+    db = QSqlDatabase::database("qt_sql_default_connection");
+    if(db.open()){
+        QSqlQuery query;
+        query.prepare("DELETE FROM BasicInformation WHERE VoteStatus = 1;");
+        query.exec();
+        QMessageBox::information(this, "Successful!", "Voting Allowed Successfully!");
+    }else{
+        QMessageBox::information(this, "Failed!", "There's some problem in the database. Contact a technical expert.");
+    }
+}
+

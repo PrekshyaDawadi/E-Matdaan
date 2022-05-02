@@ -2,6 +2,7 @@
 #include "ui_ballot.h"
 
 
+
 int count1 = 0, count2 = 0, count3 = 0;
 
 
@@ -54,6 +55,13 @@ void ballot::on_pushButton_clicked()
     else{
 
         QSqlQuery qry;
+        qry.prepare("UPDATE BasicInformation SET VoteStatus = '1' WHERE  UserName == '"+username+"' and Password == '"+password+"'");
+       // testQuery.bindValue(":val", val);
+        qry.exec();
+        if(!qry.exec()){
+            qDebug()<<"Not inserted inside vote status : "<<qry.lastError();
+        }
+
         if(ui->candidate1->isChecked()){
             count1 = 1;
             if(depart == "ComputerScience"){
@@ -117,11 +125,10 @@ void ballot::on_pushButton_clicked()
                 count3 = 0;
 
                 qry.exec();
-            }else{
-                qDebug()<<"Error!!";
-            }
 
             //QMessageBox::information(this, "Success!", "If condition 3 entered.");
+        } }else{
+            qDebug()<<"Error!!";
         }
 
         QMessageBox::information(this, "Success!", "Voting successful!");

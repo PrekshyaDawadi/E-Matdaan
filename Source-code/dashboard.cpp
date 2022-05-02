@@ -7,15 +7,34 @@
 #include "candidatesinformationinput.h"
 #include <iostream>
 #include <QString>
+#include <QPushButton>
 
-//QString winnerCS, winnerCE;
 
 dashboard::dashboard(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::dashboard)
 {
     ui->setupUi(this);
+
     db = QSqlDatabase::database("qt_sql_default_connection");
+    QSqlQuery qry;
+    qry.exec("SELECT VoteStatus FROM BasicInformation");
+    QString flag= "0";
+    while(qry.next()){
+         QSqlRecord rec = qry.record();
+          int nameCol = rec.indexOf("VoteStatus");// index of the field "name"
+          flag = qry.value(nameCol).toString();
+          qDebug() << "This is the flag value: "<<flag;
+       }
+    if(!qry.next()){
+        qDebug()<<"Query next not entered, i.e. data not read from vote status: "<<qry.lastError();
+    }
+      if(flag == "1"){
+          ui->pushButton_4->setEnabled(false);
+      }else{
+          ui->pushButton_4->setEnabled(true);
+      }
+
 }
 
 dashboard::~dashboard()
@@ -29,21 +48,6 @@ void dashboard::on_pushButton_4_clicked()
     ballot b;
     b.setModal(true);
     b.exec();
-
-    this->setEnabled(false);
-//    QSqlQuery qry;
-//    qry.exec("SELECT ComputerScience FROM ResultStatus");
-//    QString flag;
-//    while(qry.next()){
-//        QSqlRecord rec = qry.record();
-//        int nameCol = rec.indexOf("ComputerScience");// index of the field "name"
-//        flag = qry.value(nameCol).toString();
-//        qDebug() << flag;
-//     };
-//    if(flag == "0"){
-//        this->setEnabled(true);
-//    }
-
 }
 
 void dashboard::on_pushButton_clicked()
@@ -75,8 +79,8 @@ void dashboard::on_pushButton_2_clicked()
     QSqlQuery qry(db);
     QString batch = QString::number(bat); // converting int to string
 
-    // Got the QSqlError("","","") here. I have noticed I get this bug generally when I try to
-    // select a value from data base and in the condition I keep any datatype other than string as a constain.
+    // Got the QSqlError("","","") here. I noticed I get this bug generally when I try to
+    // select a value from database and in the condition I keep any datatype other than string as a constain.
 
     qry.exec("SELECT Winner FROM Results WHERE Department = '"+depart+"' AND Batch = '"+batch+"'");
     QString name;
