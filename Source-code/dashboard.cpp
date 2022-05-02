@@ -18,14 +18,20 @@ dashboard::dashboard(QWidget *parent) :
 
     db = QSqlDatabase::database("qt_sql_default_connection");
     QSqlQuery qry;
-    qry.exec("SELECT VoteStatus FROM BasicInformation");
+    qry.exec("SELECT VoteStatus FROM BasicInformation where UserName == '"+username+"' and Password == '"+password+"'");
     QString flag= "0";
-    while(qry.next()){
-         QSqlRecord rec = qry.record();
-          int nameCol = rec.indexOf("VoteStatus");// index of the field "name"
-          flag = qry.value(nameCol).toString();
-          qDebug() << "This is the flag value: "<<flag;
-       }
+    while(qry.next() == true){
+        QSqlRecord rec = qry.record();
+        int nameCol = rec.indexOf("VoteStatus"); // index of the field "name"
+        flag = qry.value(nameCol).toString();
+        qDebug()<<flag;
+    }
+//    while(qry.next()){
+//         QSqlRecord rec = qry.record();
+//          int nameCol = rec.indexOf("VoteStatus");// index of the field "name"
+//          flag = qry.value(nameCol).toString();
+//          qDebug() << "This is the flag value: "<<flag;
+//       }
     if(!qry.next()){
         qDebug()<<"Query next not entered, i.e. data not read from vote status: "<<qry.lastError();
     }

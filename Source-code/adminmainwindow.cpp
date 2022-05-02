@@ -7,6 +7,7 @@ adminMainWindow::adminMainWindow(QWidget *parent) :
     ui(new Ui::adminMainWindow)
 {
     ui->setupUi(this);
+    db = QSqlDatabase::database("qt_sql_default_connection");
 
 }
 
@@ -27,7 +28,7 @@ void adminMainWindow::on_pushButton_3_clicked()
 void adminMainWindow::on_pushButton_4_clicked()
 {
 
-    db = QSqlDatabase::database("qt_sql_default_connection");
+    //db = QSqlDatabase::database("qt_sql_default_connection");
     QString candidate1Name, candidate2Name, candidate3Name, Department = "ComputerScience";
     int Batch;
     if (db.open()){
@@ -165,7 +166,7 @@ void adminMainWindow::on_pushButton_4_clicked()
 
 void adminMainWindow::on_pushButton_clicked()
 {
-    db = QSqlDatabase::database("qt_sql_default_connection");
+   // db = QSqlDatabase::database("qt_sql_default_connection");
     if(db.open()){
         QMessageBox::StandardButton reply;
           reply = QMessageBox::question(this, "Delete", "Do you want to delete the candidates and the results?",
@@ -213,11 +214,17 @@ void adminMainWindow::on_pushButton_clicked()
 
 void adminMainWindow::on_pushButton_6_clicked()
 {
-    db = QSqlDatabase::database("qt_sql_default_connection");
+   //db = QSqlDatabase::database("qt_sql_default_connection");
     if(db.open()){
         QSqlQuery query;
-        query.prepare("DELETE FROM BasicInformation WHERE VoteStatus = 1;");
+        QString val = "0";
+        // got stuck in a stupid stuuuuuuupid mistake. initially wrote set.. where username and password. This is an admin account. It doesnot HAVE a username and password.
+        query.prepare("UPDATE BasicInformation SET VoteStatus = :val");
+        query.bindValue(":val", val);
         query.exec();
+        if(!query.exec()){
+            qDebug()<<"Vote Status not altered from admin: "<<query.lastError();
+        }
         QMessageBox::information(this, "Successful!", "Voting Allowed Successfully!");
     }else{
         QMessageBox::information(this, "Failed!", "There's some problem in the database. Contact a technical expert.");

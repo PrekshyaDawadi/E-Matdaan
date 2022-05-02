@@ -91,8 +91,8 @@ void MainWindow::on_pushButton_clicked()
                 }
 
                 if(count==1){
-                    qry.prepare("INSERT INTO BasicInformation (RollNumber, FirstName, LastName, UserName, Password, Batch, Department)\
-                                VALUES (:RollNumber, :FirstName, :LastName, :UserName, :Password, :Batch, :Department);");
+                    qry.prepare("INSERT INTO BasicInformation (RollNumber, FirstName, LastName, UserName, Password, Batch, Department, VoteStatus)\
+                                VALUES (:RollNumber, :FirstName, :LastName, :UserName, :Password, :Batch, :Department, '0');");
 
                             qry.bindValue(":RollNumber", RollNumber);
                     qry.bindValue(":FirstName", FirstName);
