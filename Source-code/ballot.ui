@@ -679,6 +679,7 @@
     <property name="font">
      <font>
       <pointsize>30</pointsize>
+      <weight>50</weight>
       <bold>false</bold>
      </font>
     </property>
@@ -690,17 +691,36 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>770</x>
+     <x>1130</x>
      <y>160</y>
      <width>671</width>
-     <height>601</height>
+     <height>741</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="resource.qrc">:/img/Images/106cb96388fc73791df022be661fa590.jpg</pixmap>
+    <pixmap resource="resource.qrc">:/img/Images/0a66f310a5516e374fee6c1a166537e3.jpg</pixmap>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>899</y>
+     <width>2401</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/img/Images/141fcb10700ed533b2d0391ce5d480ac.jpg);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
    </property>
   </widget>
  </widget>

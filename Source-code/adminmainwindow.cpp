@@ -26,11 +26,13 @@ void adminMainWindow::on_pushButton_3_clicked()
 
 void adminMainWindow::on_pushButton_4_clicked()
 {
+
     db = QSqlDatabase::database("qt_sql_default_connection");
     QString candidate1Name, candidate2Name, candidate3Name, Department = "ComputerScience";
     int Batch;
     if (db.open()){
         QSqlQuery qry;
+        qry.exec("INSERT INTO ResultStatus (ComputerScience) VALUES ('1')");
         qry.exec("SELECT sum(candidate1) AS sum1,sum(candidate2) AS sum2, sum(candidate3) AS sum3 FROM VoteCountComputerScience;");
         qry.next();
         int candidate1 = qry.value(0).toInt();
@@ -97,6 +99,7 @@ void adminMainWindow::on_pushButton_4_clicked()
         int Batch;
         if (db.open()){
             QSqlQuery qry;
+            qry.exec("INSERT INTO ResultStatus (ComputerEngineering) VALUES ('1')");
             qry.exec("SELECT sum(candidate1) AS sum1,sum(candidate2) AS sum2, sum(candidate3) AS sum3 FROM VoteCountComputerEngineering;");
             qry.next();
             int candidate1 = qry.value(0).toInt();

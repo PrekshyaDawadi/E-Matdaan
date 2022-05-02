@@ -22,8 +22,9 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 {
+
     QSqlDatabase  db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/E-MatdaanDatabase.sqlite");
+    db.setDatabaseName("/home/prekshya/Documents/projects/E-Matdaan/Source-code/E-MatdaanDatabase.sqlite");
 
     if(!db.open()){
         QMessageBox msg;
@@ -36,7 +37,6 @@ int main(int argc, char *argv[])
 
     //db.close();
     //QSqlDatabase::removeDatabase("StudentInformation");
-
 
     return a.exec();
 }

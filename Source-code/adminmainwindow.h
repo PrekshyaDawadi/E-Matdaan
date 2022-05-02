@@ -14,6 +14,7 @@
 extern QString winnerCS;
 extern QString winnerCE;
 
+
 namespace Ui {
 class adminMainWindow;
 }

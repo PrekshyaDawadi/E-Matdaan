@@ -6,6 +6,7 @@
 #include "adminmainwindow.h"
 #include "candidatesinformationinput.h"
 #include <iostream>
+#include <QString>
 
 //QString winnerCS, winnerCE;
 
@@ -28,6 +29,21 @@ void dashboard::on_pushButton_4_clicked()
     ballot b;
     b.setModal(true);
     b.exec();
+
+    this->setEnabled(false);
+//    QSqlQuery qry;
+//    qry.exec("SELECT ComputerScience FROM ResultStatus");
+//    QString flag;
+//    while(qry.next()){
+//        QSqlRecord rec = qry.record();
+//        int nameCol = rec.indexOf("ComputerScience");// index of the field "name"
+//        flag = qry.value(nameCol).toString();
+//        qDebug() << flag;
+//     };
+//    if(flag == "0"){
+//        this->setEnabled(true);
+//    }
+
 }
 
 void dashboard::on_pushButton_clicked()
